@@ -89,6 +89,8 @@ if (! (Get-AzStorageBlob @StorageContainerParams -Blob $ComponentName/$MetaDataF
     {
         # Copy up the metadata file
         $Item = Get-Item -Path $PSScriptRoot\..\templates\$MetaDataFileName
+	write-host $Item
+	write-host $item.FullName
         Set-AzStorageBlobContent @StorageContainerParams -File $item.FullName -Blob $ComponentName/$MetaDataFileName -Verbose -Force
     }
     catch
