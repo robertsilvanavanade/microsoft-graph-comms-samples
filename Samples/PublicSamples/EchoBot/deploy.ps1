@@ -35,7 +35,7 @@ if ($RunSetup -OR ! (Test-Path -Path $base\ADF\azuredeploy${OrgName}.parameters.
     & $base\ADF\release-az\Create-StageFiles.ps1 -OrgName $orgName -Location $Location
 
     # upload certificate
-    #& $base\ADF\release-az\Import-UploadWebCert.ps1 -OrgName $orgName -Location $Location
+    & $base\ADF\release-az\Import-UploadWebCert.ps1 -OrgName $orgName -Location $Location
 
     # create App Environment Secrets
     & $base\ADF\release-az\Create-AppSecrets.ps1 -OrgName $orgName -Location $Location
