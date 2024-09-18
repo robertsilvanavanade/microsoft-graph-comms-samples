@@ -159,9 +159,8 @@ resource VMSS 'Microsoft.Compute/virtualMachineScaleSets@2021-07-01' = {
     tier: 'Standard'
     capacity: AppServer.AutoScalecapacity.minimum
   }
-    zones: contains(AppServer, 'zones') ? AppServer.zones : [
+    zones: [
     '1'
-    '2'
     '3'
   ]
   properties: {
