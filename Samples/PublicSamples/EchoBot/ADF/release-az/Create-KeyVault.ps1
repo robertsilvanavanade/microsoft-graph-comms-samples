@@ -61,9 +61,9 @@ if (Get-AzKeyVault -Name $KVName -EA SilentlyContinue)
     try
     {
         $CurrentUserId = Get-AzContext | ForEach-Object account | ForEach-Object Id
-        if (! (Get-AzRoleAssignment -ResourceGroupName $RGName -SignInName $CurrentUserId -RoleDefinitionName $RoleName))
+        if (! (Get-AzRoleAssignment -ResourceGroupName $RGName -ObjectId 2cd440a2-96e1-4b84-9c23-f79bc5fa9b28 -RoleDefinitionName $RoleName))
         {
-            New-AzRoleAssignment -ResourceGroupName $RGName -SignInName $CurrentUserId -RoleDefinitionName $RoleName -Verbose
+            New-AzRoleAssignment -ResourceGroupName $RGName -ObjectId 2cd440a2-96e1-4b84-9c23-f79bc5fa9b28 -RoleDefinitionName $RoleName -Verbose
         }
     }
     catch
