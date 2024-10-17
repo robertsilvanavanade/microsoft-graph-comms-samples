@@ -108,10 +108,10 @@ Function global:AzDeploy
     #region Only needed for extensions such as DSC or Script extension
     $StorageAccount = Get-AzStorageAccount | Where-Object StorageAccountName -EQ $StorageAccountName
     $UserName = 'user1'
-    if ($env:USERNAME)
-    {
-        $userName = $env:USERNAME
-    }
+    # if ($env:USERNAME)
+    # {
+    #     $userName = $env:USERNAME
+    # }
     $StorageContainerName = "$Prefix-$App-stageartifacts-$UserName".ToLowerInvariant()
     $TemplateURIBase = $StorageAccount.Context.BlobEndPoint + $StorageContainerName
     Write-Verbose "Storage Account is: [$StorageAccountName] and container is: [$StorageContainerName]" -Verbose
